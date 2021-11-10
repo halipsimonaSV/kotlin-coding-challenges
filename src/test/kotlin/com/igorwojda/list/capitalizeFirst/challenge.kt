@@ -3,9 +3,13 @@ package com.igorwojda.list.capitalizeFirst
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
-private fun capitalizeFirst(list: List<String>): List<String> {
-    TODO("not implemented")
-}
+private fun capitalizeFirst(list: List<String>): List<String> =
+    if(list.size==0){
+         emptyList()
+    }else{
+        listOf(list.first().capitalize()) + capitalizeFirst(list.drop(1))
+    }
+
 
 private class Test {
     @Test

@@ -4,7 +4,13 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun getAllPairs(n: Int): List<Pair<Int, Int>> {
-    TODO("not implemented")
+    val pairs= ArrayList<Pair<Int,Int>>()
+    (0..n).forEach { it1->
+        (0..n).forEach{it2->
+            pairs.add(it1 to it2)
+        }
+    }
+    return pairs
 }
 
 private class Test {
