@@ -8,15 +8,11 @@ private fun formatTrainRoute(stations: List<String>): String {
     if(stations.size==1){
         start+=stations.get(0)
     }else{
-        stations.forEach {
-            start += it + ", "
-        }
-        start=start.substring(0, start.length- 2)
+        start+=stations.joinToString { it }
         val index= start.lastIndexOf(",")
         start=start.substring(0,index)+" and"+start.substring(index+1)
 
     }
-
     return start
 }
 

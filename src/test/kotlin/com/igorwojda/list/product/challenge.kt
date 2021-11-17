@@ -4,11 +4,7 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun product(list: List<Int>): Int {
-    var p=1
-    list.forEach{
-        p*=it
-    }
-    return p
+    return list.reduce(Int::times)
 }
 
 private class Test {

@@ -6,15 +6,10 @@ import org.junit.jupiter.api.Test
 private fun longestWord(str: String): String {
 
     val result = str.replace(("[^\\w]").toRegex(), " ")
-    val rawArray=result.split(" ")
-    val filteredArray=ArrayList<String>()
-    println(rawArray)
-    rawArray.forEach{
-        if(it!=" "){
-            filteredArray.add(it.trim())
-        }
-    }
-    return filteredArray.maxBy { it.length }?:""
+    return result.split(" ")
+        .toList()
+        .filter { it.isNotBlank() }
+        .maxByOrNull{it.length}?:""
 
 }
 

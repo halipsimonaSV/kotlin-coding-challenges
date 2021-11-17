@@ -4,7 +4,7 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun countDown(n: Int): List<Int> {
-    return (0..n).reversed().toList()
+    return (n downTo 0).toList()
 }
 
 private class Test {
