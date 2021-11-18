@@ -8,7 +8,7 @@ private fun decapitalizeConst(str: String): String {
         .split("_")
         .map { it.toLowerCase().capitalize() }
         .joinToString()
-        .replace(", ","")
+        .replace(", ", "")
         .decapitalize()
 }
 

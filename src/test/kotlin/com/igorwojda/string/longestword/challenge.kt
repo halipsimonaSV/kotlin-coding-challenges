@@ -4,12 +4,11 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun longestWord(str: String): String {
-
     val result = str.replace(("[^\\w]").toRegex(), " ")
     return result.split(" ")
         .toList()
         .filter { it.isNotBlank() }
-        .maxByOrNull{it.length}?:""
+        .maxByOrNull { it.length } ?: ""
 
 }
 

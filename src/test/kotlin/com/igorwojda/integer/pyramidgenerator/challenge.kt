@@ -4,7 +4,19 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 fun generatePyramid(n: Int): List<String> {
-    TODO("not implemented")
+    val listOfHash= mutableListOf<String>()
+    val maxHash=n*2-1
+    for(i in(1..maxHash) step 2){
+        val nrSpaces=maxHash-i
+        var str=""
+        for(j in 1..maxHash) str+='#'
+        var spaces=""
+        for(k in 1..nrSpaces/2) spaces+=' '
+        val prefix=str.replaceRange(0,nrSpaces/2, spaces)
+        val suffix=prefix.replaceRange(prefix.length-nrSpaces/2,prefix.length,spaces)
+        listOfHash.add(suffix)
+    }
+    return listOfHash
 }
 
 private class Test {
