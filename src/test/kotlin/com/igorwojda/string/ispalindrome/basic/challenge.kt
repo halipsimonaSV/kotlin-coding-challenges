@@ -4,7 +4,10 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun isPalindrome(str: String): Boolean {
-    TODO("not implemented")
+    val i=0
+    while(i<str.length/2){
+
+    }
 }
 
 private class Test {
