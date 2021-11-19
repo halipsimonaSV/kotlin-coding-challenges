@@ -4,7 +4,12 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun reverseInt(i: Int): Int {
-    TODO("not implemented")
+    var sign = 1
+    if (i < 0) {
+        sign = -1
+    }
+    val reversed = i.toString().filter { it.isLetterOrDigit() }.reversed().toInt()
+    return sign * reversed
 }
 
 private class Test {

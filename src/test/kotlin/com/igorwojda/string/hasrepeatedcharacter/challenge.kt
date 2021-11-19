@@ -4,7 +4,13 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun hasRepeatedChar(str: String): Boolean {
-    TODO("not implemented")
+    val mapOfChars = str.groupBy { it }
+    val max = mapOfChars.maxByOrNull { it.value.size }
+    val no = max?.let { mapOfChars[it.key] }?.count()
+    if (no != null) {
+        return no > 1
+    }
+    return false
 }
 
 private class Test {
