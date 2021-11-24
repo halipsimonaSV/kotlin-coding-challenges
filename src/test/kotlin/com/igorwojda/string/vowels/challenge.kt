@@ -5,14 +5,10 @@ import org.junit.jupiter.api.Test
 
 private fun vowels(str: String): Int {
     val listOfVowels = listOf('a', 'e', 'i', 'o', 'u', 'y')
-    val strLowerCase = str.toLowerCase()
-    var noVowels = 0
-    for (i in str.indices) {
-        if (listOfVowels.contains(strLowerCase[i])) {
-            noVowels++
-        }
-    }
-    return noVowels
+    return str
+        .toLowerCase()
+        .filter { listOfVowels.contains(it) }
+        .length
 }
 
 private class Test {

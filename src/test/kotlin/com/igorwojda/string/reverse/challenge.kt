@@ -7,7 +7,7 @@ private fun reverse(str: String): String {
     var strCopy = str
     var reversed = ""
     while (strCopy.isNotEmpty()) {
-        reversed += strCopy[strCopy.length - 1]
+        reversed += strCopy.takeLast(1)
         strCopy = strCopy.dropLast(1)
     }
     return reversed

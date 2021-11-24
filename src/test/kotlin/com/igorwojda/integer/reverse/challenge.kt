@@ -2,14 +2,14 @@ package com.igorwojda.integer.reverse
 
 import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
+import kotlin.math.sign
 
 private fun reverseInt(i: Int): Int {
-    var sign = 1
-    if (i < 0) {
-        sign = -1
-    }
-    val reversed = i.toString().filter { it.isLetterOrDigit() }.reversed().toInt()
-    return sign * reversed
+    val reversed = i.toString()
+        .filter { it.isLetterOrDigit() }
+        .reversed()
+        .toInt()
+    return i.sign * reversed
 }
 
 private class Test {
