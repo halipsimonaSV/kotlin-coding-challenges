@@ -4,7 +4,11 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun vowels(str: String): Int {
-    TODO("not implemented")
+    val listOfVowels = listOf('a', 'e', 'i', 'o', 'u', 'y')
+    return str
+        .toLowerCase()
+        .filter { listOfVowels.contains(it) }
+        .length
 }
 
 private class Test {

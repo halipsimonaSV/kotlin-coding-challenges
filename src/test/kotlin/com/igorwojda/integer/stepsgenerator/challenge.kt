@@ -4,7 +4,15 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 fun generateSteps(n: Int): List<String> {
-    TODO("not implemented")
+    return List(n) { i ->
+        List(n) { j ->
+            if (i >= j) {
+                '#'
+            } else {
+                ' '
+            }
+        }.joinToString("")
+    }
 }
 
 private class Test {

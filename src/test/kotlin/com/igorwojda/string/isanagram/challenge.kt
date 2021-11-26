@@ -4,7 +4,11 @@ import org.amshove.kluent.shouldBeEqualTo
 import org.junit.jupiter.api.Test
 
 private fun isAnagram(str1: String, str2: String): Boolean {
-    TODO("not implemented")
+    val clearedStr1 = str1.toLowerCase().filter { it.isLetterOrDigit() }
+    val clearedStr2 = str2.toLowerCase().filter { it.isLetterOrDigit() }
+    val lettersMap1 = clearedStr1.groupBy { it }
+    val lettersMap2 = clearedStr2.groupBy { it }
+    return lettersMap1 == lettersMap2
 }
 
 private class Test {
